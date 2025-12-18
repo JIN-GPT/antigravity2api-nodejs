@@ -114,6 +114,22 @@
                                         <input type="password" name="API_KEY" placeholder="留空则不验证">
                                     </div>
                                 </div>
+                                <div class="form-row-inline switch-row">
+                                    <div class="form-group compact switch-group">
+                                        <label>跳过验证 <span class="help-tip" data-tooltip="跳过ProjectId获取，直接随机生成（仅Pro账号）">?</span></label>
+                                        <label class="switch">
+                                            <input type="checkbox" name="SKIP_PROJECT_ID_FETCH">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group compact switch-group">
+                                        <label>原生Axios <span class="help-tip" data-tooltip="使用原生axios而非TLS指纹请求器">?</span></label>
+                                        <label class="switch">
+                                            <input type="checkbox" name="USE_NATIVE_AXIOS">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
                                 <div class="form-group compact">
                                     <label>图片访问链接</label>
                                     <input type="text" name="IMAGE_BASE_URL" placeholder="https://your-domain.zeabur.app">
@@ -151,6 +167,15 @@
                                     <label>思考预算 <span class="help-tip" data-tooltip="思考模型的思考token预算，影响推理深度">?</span></label>
                                     <input type="number" name="DEFAULT_THINKING_BUDGET" placeholder="16000">
                                 </div>
+                                <div class="form-row-inline switch-row">
+                                    <div class="form-group compact switch-group">
+                                        <label>上下文System <span class="help-tip" data-tooltip="合并开头连续的system消息到SystemInstruction">?</span></label>
+                                        <label class="switch">
+                                            <input type="checkbox" name="USE_CONTEXT_SYSTEM_PROMPT">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
                                 <div class="form-group compact">
                                     <label>系统提示词</label>
                                     <textarea name="SYSTEM_INSTRUCTION" rows="3" placeholder="可选的系统提示词"></textarea>
@@ -187,30 +212,8 @@
                                         <label>429重试次数</label>
                                         <input type="number" name="RETRY_TIMES" placeholder="0">
                                     </div>
-                                    <div class="form-group compact">
-                                        <label>跳过验证</label>
-                                        <select name="SKIP_PROJECT_ID_FETCH">
-                                            <option value="false">否</option>
-                                            <option value="true">是</option>
-                                        </select>
-                                    </div>
                                 </div>
-                                <div class="form-row-inline">
-                                    <div class="form-group compact">
-                                        <label>原生Axios <span class="help-tip" data-tooltip="使用原生axios而非TLS指纹请求器">?</span></label>
-                                        <select name="USE_NATIVE_AXIOS">
-                                            <option value="true">是</option>
-                                            <option value="false">否</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group compact">
-                                        <label>上下文System <span class="help-tip" data-tooltip="合并开头连续的system消息到SystemInstruction">?</span></label>
-                                        <select name="USE_CONTEXT_SYSTEM_PROMPT">
-                                            <option value="false">否</option>
-                                            <option value="true">是</option>
-                                        </select>
-                                    </div>
-                                </div>
+
                                 <div class="form-row-inline">
                                     <div class="form-group compact">
                                         <label>心跳间隔(ms) <span class="help-tip" data-tooltip="SSE心跳间隔，防止CF超时断连">?</span></label>
